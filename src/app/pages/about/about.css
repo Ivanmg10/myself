@@ -1,13 +1,31 @@
-    .about-me {
+    .about-me-left {
       opacity: 0;
       transform: translateX(50px);
-      animation: aparecer 1s ease-out forwards;
+      animation: aparecer-left 1s ease-out forwards;
     }
 
-    @keyframes aparecer {
+    @keyframes aparecer-left {
       from {
         opacity: 0;
         transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+
+      .about-me-right {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: aparecer-right 1s ease-out forwards;
+    }
+
+    @keyframes aparecer-right {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
       }
       to {
         opacity: 1;
