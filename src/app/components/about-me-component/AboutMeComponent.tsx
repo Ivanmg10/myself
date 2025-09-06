@@ -1,5 +1,5 @@
 import Image from "next/image";
-import picture from "../../../../public/yo.jpg";
+import picture from "../../../../public/images/yo.jpg";
 
 import html from "../../../../public/icons/html5.svg";
 import css from "../../../../public/icons/css3.svg";
