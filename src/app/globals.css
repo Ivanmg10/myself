@@ -34,24 +34,26 @@ body {
 
 
 .typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #edededc5; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .13em; /* Adjust as needed */
+  overflow: hidden;
+  border-right: 0.15em solid #edededc5;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.13em;
+  
+  width: 0; /* Inicialmente oculto */
   animation: 
-    typing 2.5s steps(20, end),
-    blink-caret .75s step-end infinite;
+    typing 3.5s steps(20, end) forwards, /* typing más suave */
+    blink-caret 0.75s step-end infinite;
 }
 
-/* The typing effect */
+/* Efecto de escritura tipo máquina */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
-/* The typewriter cursor effect */
+/* Efecto de cursor parpadeante */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
+  0%, 100% { border-color: transparent; }
   50% { border-color: #edededc5; }
 }
