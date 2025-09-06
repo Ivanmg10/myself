@@ -26,9 +26,9 @@ export default function Home() {
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href=""
+          href="/cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -38,12 +38,13 @@ export default function Home() {
             alt="File icon"
             width={16}
             height={16}
+            priority
           />
           CV
-        </a>
-        <a
+        </Link>
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href=""
+          href="https://github.com/Ivanmg10"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,24 +54,26 @@ export default function Home() {
             alt="Window icon"
             width={16}
             height={16}
+            priority
           />
           Git
-        </a>
-        <a
+        </Link>
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://www.linkedin.com/in/ivan-marquez-23b49b210/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
             aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
+            src="/linkedin.svg"
+            alt="LinkedIn icon"
             width={16}
             height={16}
+            priority
           />
-          ?
-        </a>
+          Linkedin
+        </Link>
       </footer>
     </div>
   );

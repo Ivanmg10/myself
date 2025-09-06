@@ -14,17 +14,27 @@ export default function AboutMeLine() {
               Capgemini • 2021 - Actualidad
             </p>
             <p className="mt-2 text-gray-600">
-              Desarrollo de interfaces en React, optimización de rendimiento y
-              diseño responsivo.
+              Participo en gran medida en el desarrollo, integración y pruebas
+              (tanto unitarias como end-to-end y de aceptación) de diversas SPAs
+              utilizadas en los procesos de simulación, contratación y consulta
+              de seguros del entorno MyBox de CaixaBank. Incluyendo entre otros:
+              MyBox Vida, MyBox Vida Negocios, MyBox VidaCare, MyBox Jubilación
+              y otros proyectos en ciernes.
             </p>
           </div>
           <div className="relative z-10 flex items-center justify-center w-8 h-8 bg-blue-600 rounded-full text-white -ml-4 -mr-4">
-            <Image src={cap} alt="Capgemini" />
+            <Image
+              src={cap}
+              alt="Capgemini"
+              className="rounded-full"
+              priority
+            />
           </div>
           <div className="w-1/2"></div>
         </div>
 
-        <div className="mb-12 flex items-center w-full">
+        {/* TO CREATE MORE */}
+        {/* <div className="mb-12 flex items-center w-full">
           <div className="w-1/2"></div>
           <div className="relative z-10 flex items-center justify-center w-8 h-8 bg-green-600 rounded-full text-white -ml-4 -mr-4">
             B
@@ -37,7 +47,7 @@ export default function AboutMeLine() {
               nube.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
