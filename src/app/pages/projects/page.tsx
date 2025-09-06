@@ -61,7 +61,7 @@ export default function AboutPage() {
         ) : (
           <div className="flex flex-col items-center justify-center mt-20">
             <h2 className="text-2xl mb-10 text-white">
-              There&apos;s no project, huh?
+              There&apos;s no project, huh??
             </h2>
             <Image
               className="h-48 w-full object-cover md:h-full md:w-48"
