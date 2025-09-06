@@ -46,6 +46,7 @@ export default function AboutPage() {
                   className="h-48 w-full object-cover md:h-full md:w-48"
                   src={flowey}
                   alt="Flowey"
+                  priority
                 />
               </div>
               <div className="p-8">

@@ -1,8 +1,16 @@
+import "./about.css";
+import AboutMeComponent from "@/app/components/about-me-component/AboutMeComponent";
+
+import AboutMeLine from "@/app/components/about-me-line/AboutMeLine";
+
 export default function AboutPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16">
-      <h1 className="text-5xl">About Us</h1>
-      <p>Welcome to our about page!</p>
+    <div className="flex justify-center">
+      <div className="grid grid-col-1 grid-rows-3 gap-4 p-8 main-body w-2/3 ">
+        <AboutMeComponent />
+
+        <AboutMeLine />
+      </div>
     </div>
   );
 }
