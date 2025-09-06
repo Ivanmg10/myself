@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./projects.css";
-import flowey from "../../../../public/flowey.jpg";
+import flowey from "../../../../public/images/flowey.jpg";
 import Image from "next/image";
 
 export default function AboutPage() {
