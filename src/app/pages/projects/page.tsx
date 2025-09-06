@@ -29,8 +29,6 @@ export default function AboutPage() {
     },
   ];
 
-  const projectsEmpty = [];
-
   return (
     <>
       <header className="w-auto p-7 text-center">
