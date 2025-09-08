@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,16 +17,34 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.ts", "jest.config.js", "src/app/page.test.tsx", "**/*.ts", "**/*.tsx", "jest.setup.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.tsx",
+    "jest.config.js",
+    "jest.setup.ts",
+    "jest.setup.ts",
+    "next-env.d.ts",
+    "src/app/page.test.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

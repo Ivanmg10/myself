@@ -8,7 +8,10 @@ export default function DefaultHeader() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex justify-around px-20 py-10 items-center">
+    <nav
+      className="flex justify-around px-20 py-10 items-center"
+      data-testid="default-header"
+    >
       <Link
         className={`text-xl font-bold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] ${
           pathname === "/pages/about" ? "text-[#a29bfe]" : ""

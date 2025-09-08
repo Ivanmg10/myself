@@ -3,7 +3,10 @@ import Image from "next/image";
 
 export default function AboutMeLine() {
   return (
-    <div className="row-span-3 col-span-1 p-4 flex justify-around m-20 about-me-right">
+    <div
+      className="row-span-3 col-span-1 p-4 flex justify-around m-20 about-me-right"
+      data-testid="about-me-line"
+    >
       <div className="relative max-w-4xl mx-auto">
         <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 -translate-x-1/2"></div>
 
