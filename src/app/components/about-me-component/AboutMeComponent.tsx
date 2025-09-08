@@ -15,10 +15,10 @@ const ReturnIcons = () => {
 
   return (
     <div className="mt-4 grid grid-rows-2 grid-cols-4 gap-5">
-      {icons.map((icon) => {
+      {icons.map((icon, index) => {
         return (
           <Image
-            key={icon.src}
+            key={index}
             className="inline-block h-20 w-20 mx-2 transition-transform duration-300 hover:scale-110"
             src={icon}
             alt="Icon"
@@ -31,7 +31,10 @@ const ReturnIcons = () => {
 
 export default function AboutMeComponent() {
   return (
-    <div className="row-span-3 col-span-1 p-4 flex justify-around about-me-left">
+    <div
+      className="row-span-3 col-span-1 p-4 flex justify-around about-me-left"
+      data-testid="about-me-component"
+    >
       <div>
         <div className=" max-w-4xl">
           <h1 className="text-4xl font-bold mb-4">Sobre mí</h1>
