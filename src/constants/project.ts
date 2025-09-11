@@ -1,1 +1,1 @@
-export const hasProjects = false
+export const hasProjects = true;
