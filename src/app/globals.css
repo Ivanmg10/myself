@@ -1,12 +1,6 @@
 @import "tailwindcss";
 
-
 /* --background: #a29bfe */
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -32,28 +26,35 @@ body {
   height: calc(100vh - 108px);
 }
 
-
 .typewriter h1 {
   overflow: hidden;
   border-right: 0.15em solid #edededc5;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.13em;
-  
+
   width: 0; /* Inicialmente oculto */
-  animation: 
-    typing 3.5s steps(20, end) forwards, /* typing más suave */
-    blink-caret 0.75s step-end infinite;
+  animation: typing 3.5s steps(20, end) forwards,
+    /* typing más suave */ blink-caret 0.75s step-end infinite;
 }
 
 /* Efecto de escritura tipo máquina */
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* Efecto de cursor parpadeante */
 @keyframes blink-caret {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #edededc5; }
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #edededc5;
+  }
 }
