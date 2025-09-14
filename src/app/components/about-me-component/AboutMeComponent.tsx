@@ -14,7 +14,7 @@ const ReturnIcons = () => {
   const icons = [html, css, js, react, ts, next, git, sass];
 
   return (
-    <div className="mt-4 grid grid-rows-2 grid-cols-4 gap-5">
+    <div className="mt-4 grid grid-row-3 sm:grid-rows-2 grid-cols-3 sm:grid-cols-4 gap-5">
       {icons.map((icon, index) => {
         return (
           <Image
@@ -36,7 +36,7 @@ export default function AboutMeComponent() {
       data-testid="about-me-component"
     >
       <div>
-        <div className=" max-w-4xl">
+        <div className="max-w-4xl">
           <h1 className="text-4xl font-bold mb-4">Sobre mí</h1>
           <p className="mb-4">
             Buenas! mi nombre es Iván. Soy desarrollador de aplicaciones web con
@@ -64,7 +64,7 @@ export default function AboutMeComponent() {
           <ReturnIcons />
         </div>
       </div>
-      <div>
+      <div className="hidden sm:block">
         <Image
           className="h-48 w-full object-cover md:h-full md:w-90 mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-right rounded-r-lg"
           src={picture}
