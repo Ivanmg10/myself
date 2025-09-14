@@ -23,7 +23,9 @@ export default function ProjectsPage() {
   return (
     <div data-testid="projects-page">
       <header className="w-auto p-7 text-center">
-        <h1 className="font-bold text-5xl project-title mb-5">Mis Proyectos</h1>
+        <h1 className="font-bold text-4xl sm:text-5xl project-title mb-5">
+          Mis Proyectos
+        </h1>
       </header>
 
       <main className="flex justify-center">
@@ -33,23 +35,23 @@ export default function ProjectsPage() {
               <Link
                 key={project.id}
                 href={project.route}
-                className="mx-auto rounded-xl shadow-md overflow-hidden mb-4 project-card"
+                className="mx-auto rounded-xl shadow-md overflow-hidden mb-4 project-card col-span-3 sm:col-span-1"
                 data-testid={`project-card-${project.id}`}
               >
                 <div className="md:flex flex-col">
                   <div className="md:shrink-0">
                     <Image
-                      className="h-48 w-full object-cover md:h-full md:w-fit"
+                      className="w-full object-cover md:h-full md:w-fit"
                       src={project.img}
                       alt={project.img + "-" + project.id}
                       priority
                     />
                   </div>
-                  <div className="p-8">
-                    <p className="mt-2 text-white text-2xl font-semibold">
+                  <div className="sm:p-8">
+                    <p className="mt-2 text-white text-1xl sm:text-2xl font-semibold">
                       {project.name}
                     </p>
-                    <p className="mt-2 text-white text-1xl">
+                    <p className="mt-2 text-white text-1xl hidden sm:block">
                       {project.description}
                     </p>
                   </div>
