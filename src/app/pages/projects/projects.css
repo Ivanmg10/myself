@@ -15,14 +15,14 @@
   }
 }
 
-@keyframes aparecerIzq {
+@keyframes aparecerAbajo {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    translate: 0 20px;
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    translate: 0 0;
   }
 }
 
@@ -39,10 +39,11 @@
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 
   transition: all 0.3s ease;
+  animation: aparecerAbajo 1s ease-out forwards;
 }
 
 .project-card:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }

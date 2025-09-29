@@ -89,6 +89,15 @@ export default function DefaultHeader() {
               />
             </Link>
           </li>
+
+          <Image
+            className="w-10 h-10 rounded-full"
+            src="/logo.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            priority
+          />
         </ul>
       </div>
     </nav>
