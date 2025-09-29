@@ -7,6 +7,7 @@ import { hasProjects } from "@/constants/project";
 import palmweather from "../../../../public/images/palmweather.png";
 import flowey from "../../../../public/images/flowey.png";
 import palmtify from "../../../../public/images/palmtify.png";
+import clsx from "clsx";
 
 export default function ProjectsPage() {
   const projects = [
@@ -49,7 +50,15 @@ export default function ProjectsPage() {
               <Link
                 key={project.id}
                 href={project.route}
-                className={`mx-auto rounded-xl shadow-md overflow-hidden mb-4 project-card col-span-3 sm:col-span-${project.size} w-full`}
+                className={clsx(
+                  "mx-auto rounded-xl shadow-md overflow-hidden mb-4 col-span-4 w-full project-card",
+                  {
+                    "sm:col-span-1": project.size === 1,
+                    "sm:col-span-2": project.size === 2,
+                    "sm:col-span-3": project.size === 3,
+                    "sm:col-span-4": project.size === 4,
+                  }
+                )}
                 data-testid={`project-card-${project.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
