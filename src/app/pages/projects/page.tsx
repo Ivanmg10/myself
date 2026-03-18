@@ -53,11 +53,11 @@ export default function ProjectsPage() {
                 className={clsx(
                   "mx-auto rounded-xl shadow-md overflow-hidden mb-4 col-span-4 w-full project-card",
                   {
-                    "sm:col-span-1": project.size === 1,
-                    "sm:col-span-2": project.size === 2,
-                    "sm:col-span-3": project.size === 3,
-                    "sm:col-span-4": project.size === 4,
-                  }
+                    "xl:col-span-1": project.size === 1,
+                    "xl:col-span-2": project.size === 2,
+                    "xl:col-span-3": project.size === 3,
+                    "xl:col-span-4": project.size === 4,
+                  },
                 )}
                 data-testid={`project-card-${project.id}`}
                 target="_blank"
@@ -65,7 +65,9 @@ export default function ProjectsPage() {
               >
                 <div
                   className={`md:flex h-full ${
-                    project.size === 3 ? "flex-row items-center" : "flex-col"
+                    project.size === 3
+                      ? "flex-row items-center"
+                      : "flex-col items-center"
                   } `}
                 >
                   <div className="md:shrink-0">
@@ -83,11 +85,6 @@ export default function ProjectsPage() {
                     <p className="mt-2 text-white text-1xl hidden sm:block whitespace-pre-line">
                       {project.description}
                     </p>
-                    {project.isInProgress && (
-                      <div className=" text-red-400 w-full bottom-0 absolute left-0 ">
-                        <p className="text-3xl p-10">Work in progress</p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </Link>

@@ -1,4 +1,5 @@
 import cap from "../../../../public/capgemini_logo.png";
+import sngular from "../../../../public/sngular_logo.jpg";
 import Image from "next/image";
 
 export default function AboutMeLine() {
@@ -18,11 +19,9 @@ export default function AboutMeLine() {
           <div className="mb-12 flex flex-col sm:flex-row items-center w-full">
             <div className="w-full sm:w-1/2 sm:pr-8 sm:text-right text-left">
               <h3 className="text-lg font-semibold">Desarrollador Frontend</h3>
-              <p className="text-sm text-gray-500">
-                Capgemini • 2021 - Actualidad
-              </p>
+              <p className="text-sm text-gray-500">Capgemini • 2021 - 2026</p>
               <p className="mt-2 text-white">
-                Participo en gran medida en el desarrollo, integración y pruebas
+                Participé en gran medida en el desarrollo, integración y pruebas
                 (tanto unitarias como end-to-end y de aceptación) de diversas
                 SPAs utilizadas en los procesos de simulación, contratación y
                 consulta de seguros del entorno MyBox de CaixaBank. Incluyendo
@@ -41,6 +40,29 @@ export default function AboutMeLine() {
             </div>
 
             <div className="hidden sm:block w-1/2"></div>
+          </div>
+
+          <div className="mb-12 flex flex-col sm:flex-row items-center w-full">
+            <div className="hidden sm:block w-1/2"></div>
+
+            <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full text-white my-4 sm:my-0 sm:-ml-4 sm:-mr-4">
+              <Image
+                src={sngular}
+                alt="sngular"
+                className="rounded-full"
+                priority
+              />
+            </div>
+
+            <div className="w-full sm:w-1/2 sm:pl-8 sm:text-left text-left">
+              <h3 className="text-lg font-semibold">
+                Desarrollador Frontend Senior
+              </h3>
+              <p className="text-sm text-gray-500">
+                Sngular • 2026 - Actualidad
+              </p>
+              <p className="mt-2 text-white">Desarrollo front end senior.</p>
+            </div>
           </div>
         </div>
       </div>
