@@ -10,14 +10,24 @@ test("renders projects page", () => {
   expect(screen.getByTestId("projects-page")).toBeInTheDocument();
 });
 
-// test("renders projects with no projects", () => {
-//   render(<ProjectsPage />);
-//   expect(screen.getByTestId("projects-page")).toBeInTheDocument();
-//   expect(screen.queryByTestId("project-card-flowey")).toBeInTheDocument();
-// });
-
-test("renders projects with projects", () => {
+test("renders projects heading", () => {
   render(<ProjectsPage />);
-  expect(screen.getByTestId("projects-page")).toBeInTheDocument();
-  expect(screen.queryByTestId("project-card-1")).toBeInTheDocument();
+  expect(screen.getByText("Mis Proyectos")).toBeInTheDocument();
+});
+
+test("renders project cards", () => {
+  render(<ProjectsPage />);
+  expect(screen.getByTestId("project-card-1")).toBeInTheDocument();
+  expect(screen.getByTestId("project-card-2")).toBeInTheDocument();
+});
+
+test("renders project names", () => {
+  render(<ProjectsPage />);
+  expect(screen.getByText("Aplicación del tiempo")).toBeInTheDocument();
+  expect(screen.getByText("Clon Spotify")).toBeInTheDocument();
+});
+
+test("does not show flowey when hasProjects is true", () => {
+  render(<ProjectsPage />);
+  expect(screen.queryByTestId("project-card-flowey")).not.toBeInTheDocument();
 });

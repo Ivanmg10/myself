@@ -1,33 +1,32 @@
 import Image from "next/image";
-import picture from "../../../../public/images/yo.jpg";
 
-import html from "../../../../public/icons/html5.svg";
-import css from "../../../../public/icons/css3.svg";
-import js from "../../../../public/icons/javascript.svg";
-import react from "../../../../public/icons/react.svg";
-import ts from "../../../../public/icons/typescript.svg";
-import next from "../../../../public/icons/nextjs.svg";
-import sass from "../../../../public/icons/sass.svg";
-import git from "../../../../public/icons/git.svg";
+const icons = [
+  { src: "/icons/html5.svg", alt: "HTML5" },
+  { src: "/icons/css3.svg", alt: "CSS3" },
+  { src: "/icons/javascript.svg", alt: "JavaScript" },
+  { src: "/icons/react.svg", alt: "React" },
+  { src: "/icons/typescript.svg", alt: "TypeScript" },
+  { src: "/icons/nextjs.svg", alt: "Next.js" },
+  { src: "/icons/git.svg", alt: "Git" },
+  { src: "/icons/sass.svg", alt: "Sass" },
+];
 
-const ReturnIcons = () => {
-  const icons = [html, css, js, react, ts, next, git, sass];
-
+function TechIcons() {
   return (
     <div className="mt-4 grid grid-row-3 sm:grid-rows-2 grid-cols-3 sm:grid-cols-4 gap-5">
-      {icons.map((icon, index) => {
-        return (
-          <Image
-            key={index}
-            className="inline-block h-20 w-20 mx-2 transition-transform duration-300 hover:scale-110"
-            src={icon}
-            alt="Icon"
-          />
-        );
-      })}
+      {icons.map((icon, index) => (
+        <Image
+          key={index}
+          className="inline-block h-20 w-20 mx-2 transition-transform duration-300 hover:scale-110"
+          src={icon.src}
+          alt={icon.alt}
+          width={80}
+          height={80}
+        />
+      ))}
     </div>
   );
-};
+}
 
 export default function AboutMeComponent() {
   return (
@@ -61,14 +60,16 @@ export default function AboutMeComponent() {
 
         <div className="mt-8 max-w-4xl">
           <h1 className="text-xl font-bold">Tecnologías</h1>
-          <ReturnIcons />
+          <TechIcons />
         </div>
       </div>
       <div className="hidden sm:block">
         <Image
           className="h-48 w-full object-cover md:h-full md:w-90 mask-radial-[100%_100%] mask-radial-from-75% mask-radial-at-right rounded-r-lg"
-          src={picture}
+          src="/images/yo.webp"
           alt="Ivan"
+          width={360}
+          height={480}
         />
       </div>
     </div>

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import SocialLinks from "./components/social-links/SocialLinks";
 
 export default function Home() {
   return (
@@ -26,54 +26,7 @@ export default function Home() {
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-            priority
-          />
-          CV
-        </Link>
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://github.com/Ivanmg10"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/github.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-            priority
-          />
-          Git
-        </Link>
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.linkedin.com/in/ivan-marquez-23b49b210/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/linkedin.svg"
-            alt="LinkedIn icon"
-            width={16}
-            height={16}
-            priority
-          />
-          Linkedin
-        </Link>
+        <SocialLinks />
       </footer>
     </div>
   );

@@ -4,37 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { hasProjects } from "@/constants/project";
-import palmweather from "../../../../public/images/palmweather.png";
-import flowey from "../../../../public/images/flowey.png";
-import palmtify from "../../../../public/images/palmtify.png";
+import { projects } from "@/data/projects";
 import clsx from "clsx";
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      id: "1",
-      name: "Aplicación del tiempo",
-      description:
-        "🌦️ PalmWeather es una aplicación web de pronóstico del tiempo desarrollada con React, Vite, TailwindCSS y WeatherAPI.\n\n Proporciona información meteorológica en tiempo real, pronóstico de 3 días y un desglose detallado de 24 horas para su ubicación.",
-      gitHub: "https://github.com/Ivanmg10/palmweather",
-      route: "https://palmweather.vercel.app/",
-      img: palmweather,
-      size: 1,
-    },
-    {
-      id: "2",
-      name: "Clon Spotify",
-      description:
-        "Clon de spotify creado con Next.js, React, TailwindCSS, TypeScript.\n\nCon las siguientes pantallas:\n- Vista de albumes\n- Vista de artistas\n- Vista de buscar (en desarrollo)",
-
-      gitHub: "https://github.com/Ivanmg10/palmtify",
-      route: "https://palmtify.vercel.app/",
-      img: palmtify,
-      isInProgress: true,
-      size: 3,
-    },
-  ];
-
   return (
     <div data-testid="projects-page">
       <header className="w-auto p-7 text-center">
@@ -70,12 +43,13 @@ export default function ProjectsPage() {
                       : "flex-col items-center"
                   } `}
                 >
-                  <div className="md:shrink-0">
+                    <div className="md:shrink-0">
                     <Image
                       className="w-full object-cover md:w-200"
                       src={project.img}
-                      alt={project.img + "-" + project.id}
-                      priority
+                      alt={`${project.name} screenshot`}
+                      width={800}
+                      height={600}
                     />
                   </div>
                   <div className="sm:p-8 relative w-full h-full">
@@ -96,10 +70,11 @@ export default function ProjectsPage() {
               </h2>
               <Image
                 className="h-48 w-full object-cover md:h-full md:w-48"
-                src={flowey}
+                src="/images/flowey.webp"
                 alt="Flowey"
+                width={192}
+                height={192}
                 data-testid={`project-card-flowey`}
-                priority
               />
             </div>
           )}

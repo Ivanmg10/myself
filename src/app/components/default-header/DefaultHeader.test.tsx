@@ -5,6 +5,11 @@ jest.mock("next/navigation", () => ({
   usePathname: jest.fn(),
 }));
 
+jest.mock("../social-links/SocialLinks", () => ({
+  __esModule: true,
+  default: () => <div data-testid="social-links">SocialLinks</div>,
+}));
+
 import { usePathname } from "next/navigation";
 const mockUsePathname = usePathname as jest.Mock;
 
@@ -13,6 +18,20 @@ describe("DefaultHeader", () => {
     mockUsePathname.mockReturnValue("/unknown");
     render(<DefaultHeader />);
     expect(screen.getByTestId("default-header")).toBeInTheDocument();
+  });
+
+  test("renders navigation links", () => {
+    mockUsePathname.mockReturnValue("/unknown");
+    render(<DefaultHeader />);
+    expect(screen.getByText("Home")).toBeInTheDocument();
+    expect(screen.getByText("Proyectos")).toBeInTheDocument();
+    expect(screen.getByText("Ivan Marquez Garcia")).toBeInTheDocument();
+  });
+
+  test("renders social links component", () => {
+    mockUsePathname.mockReturnValue("/unknown");
+    render(<DefaultHeader />);
+    expect(screen.getByTestId("social-links")).toBeInTheDocument();
   });
 
   test("highlights home link when pathname is /", () => {

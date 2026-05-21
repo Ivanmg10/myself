@@ -11,13 +11,23 @@ describe("generateStaticParams", () => {
     ]);
   });
 
-  test("render default projects page", () => {
-    render(<DefaultProjectsPage params={{ slug: "project-1" }} />);
-    expect(screen.getByTestId("default-projects-page")).toBeInTheDocument();
-  });
-
   test("returns an array of the correct length", async () => {
     const result = await generateStaticParams();
     expect(result).toHaveLength(3);
+  });
+});
+
+describe("DefaultProjectsPage", () => {
+  test("renders with given slug from params Promise", async () => {
+    const params = Promise.resolve({ slug: "project-1" });
+    render(await DefaultProjectsPage({ params }));
+    expect(screen.getByTestId("default-projects-page")).toBeInTheDocument();
+    expect(screen.getByText("project-1")).toBeInTheDocument();
+  });
+
+  test("renders heading", async () => {
+    const params = Promise.resolve({ slug: "project-2" });
+    render(await DefaultProjectsPage({ params }));
+    expect(screen.getByText("My Projects")).toBeInTheDocument();
   });
 });
