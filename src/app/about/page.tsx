@@ -1,7 +1,13 @@
 import "./about.css";
+import type { Metadata } from "next";
 import AboutMeComponent from "@/app/components/about-me-component/AboutMeComponent";
-
 import AboutMeLine from "@/app/components/about-me-line/AboutMeLine";
+
+export const metadata: Metadata = {
+  title: "Sobre mí — Ivan Marquez",
+  description:
+    "Conoce más sobre Iván Márquez García — desarrollador Frontend con 4 años de experiencia",
+};
 
 export default function AboutPage() {
   return (

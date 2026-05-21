@@ -1,0 +1,9 @@
+.about-me-left {
+  opacity: 0;
+  animation: fade-in-left 1s ease-out forwards;
+}
+
+.about-me-right {
+  opacity: 0;
+  animation: fade-in-right 1s ease-out forwards;
+}
