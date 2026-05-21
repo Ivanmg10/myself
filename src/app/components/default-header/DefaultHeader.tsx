@@ -14,8 +14,8 @@ export default function DefaultHeader() {
       data-testid="default-header"
     >
       <Link
-        className={`sm:text-xl w-[50%] sm:w-auto text-center font-bold transition-colors delay-100 duration-150 hover:text-primary dark:hover:text-primary pl-[24px] ${
-          pathname === "/about" ? "text-primary" : ""
+        className={`sm:text-xl w-[50%] sm:w-auto text-center font-bold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] pl-[24px] ${
+          pathname === "/about" ? "text-[#a29bfe]" : ""
         }`}
         href="/about"
       >
@@ -24,16 +24,16 @@ export default function DefaultHeader() {
       <div className="flex items-center justify-center w-[50%] sm:w-auto">
         <ul className="flex items-center space-x-6">
           <Link
-            className={`font-semibold transition-colors delay-100 duration-150 hover:text-primary dark:hover:text-primary ${
-              pathname === "/" ? "text-primary" : ""
+            className={`font-semibold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] ${
+              pathname === "/" ? "text-[#a29bfe]" : ""
             }`}
             href="/"
           >
             Home
           </Link>
           <Link
-            className={`font-semibold transition-colors delay-100 duration-150 hover:text-primary dark:hover:text-primary ${
-              pathname === "/projects" ? "text-primary" : ""
+            className={`font-semibold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] ${
+              pathname === "/projects" ? "text-[#a29bfe]" : ""
             }`}
             href="/projects"
           >
