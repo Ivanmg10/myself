@@ -1,16 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import DefaultHeader from "./components/default-header/DefaultHeader";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // normal, medium, bold
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Ivan Marquez",
   description: "Portfolio personal de Iván Márquez García — Desarrollador Frontend",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -19,19 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${roboto.className} antialiased`}>
-        <LayoutContent>{children}</LayoutContent>
+        <DefaultHeader />
+        {children}
       </body>
     </html>
-  );
-}
-
-export function LayoutContent({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <DefaultHeader />
-      {children}
-    </>
   );
 }

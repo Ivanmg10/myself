@@ -14,28 +14,28 @@ export default function DefaultHeader() {
       data-testid="default-header"
     >
       <Link
-        className={`sm:text-xl w-[50%] sm:w-auto text-center font-bold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] pl-[24px] ${
-          pathname === "/pages/about" ? "text-[#a29bfe]" : ""
+        className={`sm:text-xl w-[50%] sm:w-auto text-center font-bold transition-colors delay-100 duration-150 hover:text-primary dark:hover:text-primary pl-[24px] ${
+          pathname === "/about" ? "text-primary" : ""
         }`}
-        href="/pages/about"
+        href="/about"
       >
         Ivan Marquez Garcia
       </Link>
       <div className="flex items-center justify-center w-[50%] sm:w-auto">
         <ul className="flex items-center space-x-6">
           <Link
-            className={`font-semibold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] ${
-              pathname === "/" ? "text-[#a29bfe]" : ""
+            className={`font-semibold transition-colors delay-100 duration-150 hover:text-primary dark:hover:text-primary ${
+              pathname === "/" ? "text-primary" : ""
             }`}
             href="/"
           >
             Home
           </Link>
           <Link
-            className={`font-semibold transition-colors delay-100 duration-150 hover:text-[#a29bfe] dark:hover:text-[#a29bfe] ${
-              pathname === "/pages/projects" ? "text-[#a29bfe]" : ""
+            className={`font-semibold transition-colors delay-100 duration-150 hover:text-primary dark:hover:text-primary ${
+              pathname === "/projects" ? "text-primary" : ""
             }`}
-            href="/pages/projects"
+            href="/projects"
           >
             Proyectos
           </Link>
