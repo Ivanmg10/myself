@@ -4,7 +4,7 @@
   "title": "Design System: Iván Márquez García",
   "extensions": {
     "colorMeta": {
-      "accent": { "role": "primary", "displayName": "Interaction Lavender", "canonical": "#a29bfe", "tonalRamp": ["#1f1a4a", "#2f2870", "#40379a", "#5b4cdb", "#7a6ff0", "#a29bfe", "#c7c2ff", "#ebe9ff"] },
+      "accent": { "role": "primary", "displayName": "Focus Lavender", "canonical": "#a29bfe", "tonalRamp": ["#1f1a4a", "#2f2870", "#40379a", "#5b4cdb", "#7a6ff0", "#a29bfe", "#c7c2ff", "#ebe9ff"] },
       "accent-light": { "role": "primary", "displayName": "Deep Violet", "canonical": "#5b4cdb", "tonalRamp": ["#1f1a4a", "#2f2870", "#40379a", "#5b4cdb", "#7a6ff0", "#a29bfe", "#c7c2ff", "#ebe9ff"] },
       "on-accent": { "role": "neutral", "displayName": "Text on Lavender", "canonical": "#0a0a0a" },
       "on-accent-light": { "role": "neutral", "displayName": "Text on Violet", "canonical": "#ffffff" },
@@ -57,7 +57,7 @@
       "refersTo": "button-pill-primary",
       "description": "The single filled control: the CV download.",
       "html": "<a class=\"ds-pill-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3v12\"/><path d=\"M7 10l5 5 5-5\"/><path d=\"M5 21h14\"/></svg>Resume</a>",
-      "css": ".ds-pill-primary { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 16px 0 14px; border-radius: 9999px; border: 1px solid var(--pill, #ededed); background: var(--pill, #ededed); color: var(--on-pill, #0a0a0a); font: 500 13.5px Roboto, system-ui, sans-serif; text-decoration: none; transition: color 200ms, background-color 200ms, border-color 200ms; } .ds-pill-primary:hover { background: var(--accent, #a29bfe); border-color: var(--accent, #a29bfe); color: var(--on-accent, #0a0a0a); } .ds-pill-primary:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+      "css": ".ds-pill-primary { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 16px 0 14px; border-radius: 9999px; border: 1px solid var(--pill, #ededed); background: var(--pill, #ededed); color: var(--on-pill, #0a0a0a); font: 500 13.5px Roboto, system-ui, sans-serif; text-decoration: none; transition: color 200ms, background-color 200ms, border-color 200ms; } .ds-pill-primary:hover { background: color-mix(in srgb, var(--pill, #ededed) 85%, transparent); border-color: transparent; } .ds-pill-primary:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
     },
     {
       "name": "Disabled Pill",
@@ -71,16 +71,16 @@
       "name": "Icon Link",
       "kind": "button",
       "refersTo": "icon-link",
-      "description": "Bare stroke icon in a 34px round target; turns accent on hover.",
+      "description": "Bare stroke icon in a 34px round target; turns fg on hover.",
       "html": "<a class=\"ds-icon-link\" href=\"#\" aria-label=\"GitHub\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22\"/></svg></a>",
-      "css": ".ds-icon-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9999px; color: var(--muted, #a3a3a3); transition: color 200ms; } .ds-icon-link:hover { color: var(--accent, #a29bfe); } .ds-icon-link:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+      "css": ".ds-icon-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9999px; color: var(--muted, #a3a3a3); transition: color 200ms; } .ds-icon-link:hover { color: var(--fg, #ededed); } .ds-icon-link:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
     },
     {
       "name": "Inline Link",
       "kind": "custom",
-      "description": "Bio link: fg text, hairline underline that turns accent on hover.",
+      "description": "Bio link: fg text, hairline underline that turns fg on hover.",
       "html": "<p class=\"ds-bio\">I build my own products, like <a class=\"ds-link\" href=\"#\">CheevoVault</a>.</p>",
-      "css": ".ds-bio { font: 400 15.5px/1.75 Roboto, system-ui, sans-serif; color: var(--muted, #a3a3a3); } .ds-link { color: var(--fg, #ededed); text-decoration: underline; text-decoration-color: var(--line-strong, #3a3a3a); text-underline-offset: 3px; transition: text-decoration-color 200ms; } .ds-link:hover { text-decoration-color: var(--accent, #a29bfe); } .ds-link:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+      "css": ".ds-bio { font: 400 15.5px/1.75 Roboto, system-ui, sans-serif; color: var(--muted, #a3a3a3); } .ds-link { color: var(--fg, #ededed); text-decoration: underline; text-decoration-color: var(--line-strong, #3a3a3a); text-underline-offset: 3px; transition: text-decoration-color 200ms; } .ds-link:hover { text-decoration-color: var(--fg, #ededed); } .ds-link:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
     },
     {
       "name": "Language Switcher",
@@ -115,17 +115,17 @@
   ],
   "narrative": {
     "northStar": "The Quiet Column",
-    "overview": "One 600px column of facts on a near-black ground, read top to bottom in a single scroll. The page is a CV that happens to be a website: avatar, name, role, a short bio, two pill actions, then numbered lists of projects and jobs. Nothing is decorated. Hierarchy comes from weight (500 vs 400) and from the two-step text contrast of foreground versus muted grey, not from size jumps, colour blocks or ornament.\n\nColour is withheld until the visitor acts. The lavender accent never appears at rest except inside the project banners, which carry each product's own brand and sit outside this palette. It shows up on hover, focus, link underlines and text selection, so the page reads as monochrome until touched. The theme follows the system: dark by default, a neutral light theme under `prefers-color-scheme: light` with a deeper violet accent tuned for contrast on white.\n\nDepth is flat. Surfaces separate by a one-step tonal shift and a hairline border, never by shadow. Motion is a single 200ms colour transition, removed entirely under reduced motion.",
+    "overview": "One 600px column of facts on a near-black ground, read top to bottom in a single scroll. The page is a CV that happens to be a website: avatar, name, role, a short bio, two pill actions, then numbered lists of projects and jobs. Nothing is decorated. Hierarchy comes from weight (500 vs 400) and from the two-step text contrast of foreground versus muted grey, not from size jumps, colour blocks or ornament.\n\nThe page is monochrome. Hovers are neutral grey shifts (fg, or the pill at 85%), never colour. The lavender accent is kept for the keyboard focus ring and text selection only; the only other colour on the page lives inside the project banners, which carry each product's own brand and sit outside this palette. The theme follows the system: dark by default, a neutral light theme under `prefers-color-scheme: light` with a deeper violet accent tuned for contrast on white.\n\nDepth is flat. Surfaces separate by a one-step tonal shift and a hairline border, never by shadow. Motion is a single 200ms colour transition, removed entirely under reduced motion.",
     "keyCharacteristics": [
       "One centred column, max 600px, 24px side gutter, 120px top and bottom air.",
       "Two text tones (fg, muted) do almost all the hierarchy work.",
-      "Accent is interaction-only: hover, focus ring, underline, selection.",
+      "Accent only for the focus ring and text selection; hovers are neutral grey.",
       "Fully rounded pills at 34px with a 44px invisible hit area.",
       "Mono appears in exactly two places: section counters and the en/es switcher.",
       "Flat: hairline borders and tonal surfaces, no shadows."
     ],
     "rules": [
-      { "name": "The Touch-to-Colour Rule", "body": "The accent appears only in response to the visitor: hover, focus-visible, selection, underline hover. Nothing in the portfolio's own chrome is lavender at rest.", "section": "colors" },
+      { "name": "The Focus-Only Colour Rule", "body": "The accent appears only for focus-visible and text selection. Hovers move between greys (muted to fg, pill to pill at 85%). Nothing in the portfolio's own chrome is lavender at rest or on hover.", "section": "colors" },
       { "name": "The One Filled Pill Rule", "body": "Only the Resume download uses the filled `pill` treatment. Every other control is a surface pill, a bare icon or a text link.", "section": "colors" },
       { "name": "The Banners Are Guests Rule", "body": "Project banners are rasters in each product's own identity. They are framed with a hairline and an 8px radius but never recoloured or tinted to match the portfolio.", "section": "colors" },
       { "name": "The Two-Weights Rule", "body": "Hierarchy is 500 against 400 plus fg against muted. No bold, no uppercase, no letter-spaced labels.", "section": "typography" },
@@ -134,7 +134,7 @@
     ],
     "dos": [
       "Do keep every surface inside the single 600px column with the 24px gutter.",
-      "Do let accent appear only on hover, focus-visible, selection and underline hover.",
+      "Do keep hovers as grey shifts; let the accent appear only on focus-visible and selection.",
       "Do make new controls 34px pills with the 44px hit-area outset.",
       "Do use the `pill` fill for at most one primary action per view.",
       "Do separate surfaces with a 1px hairline or a one-step tonal shift.",
@@ -143,7 +143,7 @@
     ],
     "donts": [
       "Don't add box-shadows, gradients or glows.",
-      "Don't use the accent as a resting fill, text colour or background.",
+      "Don't use the accent as a resting fill, text colour, background or hover colour.",
       "Don't use Roboto Mono for anything other than section counters and the language switcher.",
       "Don't introduce bold, uppercase or tracked-out labels; hierarchy is 500/400 and fg/muted.",
       "Don't recolour or tint project banners to the portfolio palette.",

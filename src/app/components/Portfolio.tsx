@@ -16,10 +16,10 @@ const count = (list: unknown[]) => String(list.length).padStart(2, "0");
 const langLink =
   "relative py-1.5 transition-colors duration-200 hover:text-fg after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']";
 const bioLink =
-  "text-fg underline decoration-line-strong underline-offset-[3px] transition-colors duration-200 hover:decoration-accent";
+  "text-fg underline decoration-line-strong underline-offset-[3px] transition-colors duration-200 hover:decoration-fg";
 const sectionTitle = "mb-3 font-mono text-[13px] font-normal text-muted";
 const iconLink =
-  "hit inline-flex size-[34px] items-center justify-center rounded-full text-muted transition-colors duration-200 hover:text-accent";
+  "hit inline-flex size-[34px] items-center justify-center rounded-full text-muted transition-colors duration-200 hover:text-fg";
 
 export default function Portfolio({ lang }: { lang: Locale }) {
   const c = content[lang];
@@ -102,7 +102,7 @@ export default function Portfolio({ lang }: { lang: Locale }) {
             <a
               href={links.cv}
               download
-              className="hit inline-flex h-[34px] items-center gap-[7px] rounded-full border border-pill bg-pill pr-4 pl-3.5 text-[13.5px] font-medium text-on-pill transition-colors duration-200 hover:border-accent hover:bg-accent hover:text-on-accent"
+              className="hit inline-flex h-[34px] items-center gap-[7px] rounded-full border border-pill bg-pill pr-4 pl-3.5 text-[13.5px] font-medium text-on-pill transition-colors duration-200 hover:border-transparent hover:bg-pill/85"
             >
               <DownloadIcon className="size-[15px]" />
               {c.resume}
@@ -198,7 +198,7 @@ export default function Portfolio({ lang }: { lang: Locale }) {
                     <span className="whitespace-nowrap text-[13px] text-muted tabular-nums">
                       {job.dates}
                     </span>
-                    <ChevronDownIcon className="size-4 shrink-0 text-muted transition-[color,transform] duration-200 group-hover/summary:text-accent group-open:rotate-180" />
+                    <ChevronDownIcon className="size-4 shrink-0 text-muted transition-[color,transform] duration-200 group-hover/summary:text-fg group-open:rotate-180" />
                   </summary>
                   <div className="mt-1 mb-3 ml-[46px] flex flex-col gap-2.5 text-[14px] leading-[1.7] text-muted">
                     {job.paragraphs.map((t, k) => (

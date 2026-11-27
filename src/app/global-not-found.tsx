@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const link =
-  "text-fg underline decoration-line-strong underline-offset-[3px] transition-colors duration-200 hover:decoration-accent";
+  "text-fg underline decoration-line-strong underline-offset-[3px] transition-colors duration-200 hover:decoration-fg";
 
 export default function GlobalNotFound() {
   return (

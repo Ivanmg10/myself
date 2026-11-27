@@ -83,8 +83,8 @@ components:
     height: "34px"
     padding: "0 16px 0 14px"
   button-pill-primary-hover:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.on-accent}"
+    backgroundColor: "{colors.pill} at 85% opacity"
+    textColor: "{colors.on-pill}"
   button-pill-disabled:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.muted}"
@@ -97,7 +97,7 @@ components:
     rounded: "{rounded.full}"
     size: "34px"
   icon-link-hover:
-    textColor: "{colors.accent}"
+    textColor: "{colors.fg}"
   status-pill:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.fg}"
@@ -119,25 +119,25 @@ components:
 
 One 600px column of facts on a near-black ground, read top to bottom in a single scroll. The page is a CV that happens to be a website: avatar, name, role, a short bio, two pill actions, then numbered lists of projects and jobs. Nothing is decorated. Hierarchy comes from weight (500 vs 400) and from the two-step text contrast of foreground versus muted grey, not from size jumps, colour blocks or ornament.
 
-Colour is withheld until the visitor acts. The lavender accent never appears at rest except inside the project banners, which carry each product's own brand and sit outside this palette. It shows up on hover, focus, link underlines and text selection, so the page reads as monochrome until touched. The theme follows the system: dark by default, a neutral light theme under `prefers-color-scheme: light` with a deeper violet accent tuned for contrast on white.
+The page is monochrome. Hovers are neutral grey shifts (fg, or the pill at 85%), never colour. The lavender accent is kept for the keyboard focus ring and text selection only; the only other colour on the page lives inside the project banners, which carry each product's own brand and sit outside this palette. The theme follows the system: dark by default, a neutral light theme under `prefers-color-scheme: light` with a deeper violet accent tuned for contrast on white.
 
 Depth is flat. Surfaces separate by a one-step tonal shift and a hairline border, never by shadow. Motion is a single 200ms colour transition, removed entirely under reduced motion.
 
 **Key Characteristics:**
 - One centred column, max 600px, 24px side gutter, 120px top and bottom air.
 - Two text tones (fg, muted) do almost all the hierarchy work.
-- Accent is interaction-only: hover, focus ring, underline, selection.
+- Accent only for the focus ring and text selection; hovers are neutral grey.
 - Fully rounded pills at 34px with a 44px invisible hit area.
 - Mono appears in exactly two places: section counters and the en/es switcher.
 - Flat: hairline borders and tonal surfaces, no shadows.
 
 ## Colors
 
-A neutral grey ladder with a single violet voice that is heard only on interaction.
+A neutral grey ladder with a single violet voice reserved for keyboard focus and selection.
 
 ### Primary
-- **Interaction Lavender** (dark theme, `accent`): hover fill of the Resume pill, hover colour of icon links and the experience chevron, link-underline hover, 2px focus ring, text selection background. Paired with `on-accent` for text on top of it.
-- **Deep Violet** (light theme, `accent-light`): the same roles in the light theme; darker so the focus ring and underline hold contrast on the pale ground.
+- **Focus Lavender** (dark theme, `accent`): 2px focus ring and text selection background. Paired with `on-accent` for selected text. Never used for hover (Iván's decision, 2026-11-27: hovers read as a subtle grey, not violet).
+- **Deep Violet** (light theme, `accent-light`): the same roles in the light theme; darker so the focus ring holds contrast on the pale ground.
 
 ### Neutral
 - **Ink Black** (`page` / `page-light`): page ground. Also the hard-coded ground of the Open Graph image.
@@ -153,7 +153,7 @@ A neutral grey ladder with a single violet voice that is heard only on interacti
 - **Awake Green** (`status-awake`) and **Asleep Red** (`status-asleep`): the 8px dot in the local-time pill only. They are literal values in the component, not theme tokens, and they never carry meaning alone (the sun/moon icon and screen-reader text say the same thing).
 
 ### Named Rules
-**The Touch-to-Colour Rule.** The accent appears only in response to the visitor: hover, focus-visible, selection, underline hover. Nothing in the portfolio's own chrome is lavender at rest.
+**The Focus-Only Colour Rule.** The accent appears only for focus-visible and text selection. Hovers move between greys (muted to fg, pill to pill at 85%). Nothing in the portfolio's own chrome is lavender at rest or on hover.
 
 **The One Filled Pill Rule.** Only the Resume download uses the filled `pill` treatment. Every other control is a surface pill, a bare icon or a text link.
 
@@ -205,16 +205,17 @@ Three radii. Fully round (9999px) for every pill, the avatar, the status dot and
 Quiet pills, all 34px tall, with an invisible 5px outset that grows the tap target to 44px.
 - **Shape:** fully rounded (9999px), 1px border.
 - **Primary (Resume):** `pill` fill and border, `on-pill` text, 13.5px/500 label with a 15px download icon, 14px left and 16px right padding, 7px icon gap.
-- **Hover / Focus:** fill and border switch to `accent`, text to `on-accent`, over 200ms. Focus is the global 2px accent outline at 3px offset.
+- **Hover:** fill drops to `pill` at 85% (a slightly greyer pill) and the border goes transparent, over 200ms; text stays `on-pill`.
+- **Focus:** the global 2px accent outline at 3px offset.
 - **Disabled (Book a call):** `surface` fill, `line` border, muted text, not-allowed cursor, with "· soon" appended. No hover state.
 
 ### Icon links
 - **Style:** 34px round hit area (44px with the outset), 17px stroke icon in muted.
-- **Hover:** icon turns `accent`. No fill, no border.
+- **Hover:** icon goes from muted to `fg`. No fill, no border.
 
 ### Inline links
 - **Style:** fg text with a `line-strong` underline at 3px offset.
-- **Hover:** only the underline turns `accent`; the text colour holds.
+- **Hover:** only the underline turns `fg`; the text colour holds.
 
 ### Status pill (local time)
 - **Style:** 30px round pill, `surface` fill, `line` border, 13px tabular text: status dot, place, a muted middle dot, sun or moon icon, 24-hour Madrid time. Renders "--:--" with a muted dot before hydration.
@@ -229,13 +230,13 @@ Quiet pills, all 34px tall, with an invisible 5px outset that grows the tap targ
 
 ### Experience row
 - **Style:** native `<details>`; summary with logo, title, muted role, dates and a 16px chevron. All rows but the last start open.
-- **Hover / Open:** chevron turns `accent` on summary hover and rotates 180 degrees when open, 200ms.
+- **Hover / Open:** chevron goes from muted to `fg` on summary hover and rotates 180 degrees when open, 200ms.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** keep every surface inside the single 600px column with the 24px gutter.
-- **Do** let accent appear only on hover, focus-visible, selection and underline hover.
+- **Do** keep hovers as grey shifts; let the accent appear only on focus-visible and selection.
 - **Do** make new controls 34px pills with the 44px hit-area outset.
 - **Do** use the `pill` fill for at most one primary action per view.
 - **Do** separate surfaces with a 1px hairline or a one-step tonal shift.
@@ -244,7 +245,7 @@ Quiet pills, all 34px tall, with an invisible 5px outset that grows the tap targ
 
 ### Don't:
 - **Don't** add box-shadows, gradients or glows.
-- **Don't** use the accent as a resting fill, text colour or background.
+- **Don't** use the accent as a resting fill, text colour, background or hover colour.
 - **Don't** use Roboto Mono for anything other than section counters and the language switcher.
 - **Don't** introduce bold, uppercase or tracked-out labels; hierarchy is 500/400 and fg/muted.
 - **Don't** recolour or tint project banners to the portfolio palette.

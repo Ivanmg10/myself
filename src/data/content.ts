@@ -115,8 +115,8 @@ export const content: Record<Locale, Content> = {
         role: "Senior frontend developer",
         dates: "2026–present",
         paragraphs: [
-          "Internal people-management tool for a large international retailer. Each manager sees their own team’s org chart and other teams’, and handles leave, career history, salaries and sensitive data, start dates, and changes of level, position or role.",
-          "I work with AI agents every day under a very demanding delivery pace and, as the project needs it, I also take on UX, QA and code review.",
+          "I work on an internal people-management tool for a large international retailer. With it, each manager can see their own team’s org chart and other teams’, and handle leave, career history, salaries and other sensitive data, start dates, and changes of level, position or role.",
+          "Every day I work with AI agents on a very demanding delivery schedule, and when the project needs it I also take on UX, QA and code review.",
         ],
       },
       {
@@ -125,7 +125,7 @@ export const content: Record<Locale, Content> = {
         role: "Frontend developer",
         dates: "2021–2026",
         paragraphs: [
-          "Development, integration and testing (unit, end-to-end and acceptance) of the SPAs used to quote, buy and manage CaixaBank’s MyBox insurance: Vida, Vida Negocios, VidaCare and Jubilación. I helped manage the team and its projects, and was the tech lead on some products.",
+          "I developed, integrated and tested (unit, end-to-end and acceptance) the SPAs for quoting, buying and managing CaixaBank’s MyBox insurance: Vida, Vida Negocios, VidaCare and Jubilación. I also helped manage the team and its projects, and was tech lead on some of them.",
         ],
       },
     ],
@@ -189,8 +189,8 @@ export const content: Record<Locale, Content> = {
         role: "Desarrollador frontend senior",
         dates: "2026–actualidad",
         paragraphs: [
-          "Herramienta interna de gestión de equipos para un gran grupo de retail internacional. Cada responsable ve el organigrama de su equipo y el de otros, y gestiona bajas, trayectorias, salarios y datos sensibles, fechas de incorporación y cambios de nivel, posición o rol.",
-          "Trabajo con agentes de IA a diario en un flujo de entregas muy exigente y, por necesidad del proyecto, también me encargo de UX, QA y code review.",
+          "Trabajo en una herramienta interna de gestión de equipos para un gran grupo de retail internacional. Con ella, cada responsable ve el organigrama de su equipo y el de otros, y gestiona bajas, trayectorias, salarios y datos sensibles, fechas de incorporación y cambios de nivel, posición o rol.",
+          "Cada día trabajo con agentes de IA en un flujo de entregas muy exigente y, cuando el proyecto lo necesita, también me encargo de UX, QA y code review.",
         ],
       },
       {
@@ -199,7 +199,7 @@ export const content: Record<Locale, Content> = {
         role: "Desarrollador frontend",
         dates: "2021–2026",
         paragraphs: [
-          "Desarrollo, integración y pruebas (unitarias, end-to-end y de aceptación) de las SPAs de simulación, contratación y consulta de seguros MyBox de CaixaBank: Vida, Vida Negocios, VidaCare y Jubilación. Ayudé a gestionar el equipo y sus proyectos, y fui el tech lead en algunos productos.",
+          "Desarrollé, integré y probé (pruebas unitarias, end-to-end y de aceptación) las SPAs de simulación, contratación y consulta de los seguros MyBox de CaixaBank: Vida, Vida Negocios, VidaCare y Jubilación. También ayudé a gestionar el equipo y sus proyectos, y fui tech lead en algunos de ellos.",
         ],
       },
     ],
