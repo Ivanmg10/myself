@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-27T00:00:00Z",
+  "title": "Design System: Iván Márquez García",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Interaction Lavender", "canonical": "#a29bfe", "tonalRamp": ["#1f1a4a", "#2f2870", "#40379a", "#5b4cdb", "#7a6ff0", "#a29bfe", "#c7c2ff", "#ebe9ff"] },
+      "accent-light": { "role": "primary", "displayName": "Deep Violet", "canonical": "#5b4cdb", "tonalRamp": ["#1f1a4a", "#2f2870", "#40379a", "#5b4cdb", "#7a6ff0", "#a29bfe", "#c7c2ff", "#ebe9ff"] },
+      "on-accent": { "role": "neutral", "displayName": "Text on Lavender", "canonical": "#0a0a0a" },
+      "on-accent-light": { "role": "neutral", "displayName": "Text on Violet", "canonical": "#ffffff" },
+      "page": { "role": "neutral", "displayName": "Ink Black", "canonical": "#0a0a0a", "tonalRamp": ["#0a0a0a", "#111111", "#161616", "#222222", "#3a3a3a", "#a3a3a3", "#ededed", "#fafafa"] },
+      "card": { "role": "neutral", "displayName": "Hover Card", "canonical": "#111111" },
+      "surface": { "role": "neutral", "displayName": "Raised Charcoal", "canonical": "#161616" },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#222222" },
+      "line-strong": { "role": "neutral", "displayName": "Strong Hairline", "canonical": "#3a3a3a" },
+      "muted": { "role": "neutral", "displayName": "Ash Grey", "canonical": "#a3a3a3" },
+      "fg": { "role": "neutral", "displayName": "Bone", "canonical": "#ededed" },
+      "pill": { "role": "neutral", "displayName": "Pill Ink", "canonical": "#ededed" },
+      "on-pill": { "role": "neutral", "displayName": "Text on Pill", "canonical": "#0a0a0a" },
+      "page-light": { "role": "neutral", "displayName": "Ink Black (light theme)", "canonical": "#fafafa", "tonalRamp": ["#171717", "#525252", "#cfcfcf", "#e5e5e5", "#f0f0f0", "#fafafa", "#ffffff", "#ffffff"] },
+      "fg-light": { "role": "neutral", "displayName": "Bone (light theme)", "canonical": "#171717" },
+      "muted-light": { "role": "neutral", "displayName": "Ash Grey (light theme)", "canonical": "#525252" },
+      "surface-light": { "role": "neutral", "displayName": "Raised Charcoal (light theme)", "canonical": "#f0f0f0" },
+      "card-light": { "role": "neutral", "displayName": "Hover Card (light theme)", "canonical": "#ffffff" },
+      "line-light": { "role": "neutral", "displayName": "Hairline (light theme)", "canonical": "#e5e5e5" },
+      "line-strong-light": { "role": "neutral", "displayName": "Strong Hairline (light theme)", "canonical": "#cfcfcf" },
+      "pill-light": { "role": "neutral", "displayName": "Pill Ink (light theme)", "canonical": "#171717" },
+      "on-pill-light": { "role": "neutral", "displayName": "Text on Pill (light theme)", "canonical": "#fafafa" },
+      "status-awake": { "role": "status", "displayName": "Awake Green", "canonical": "#22c55e" },
+      "status-asleep": { "role": "status", "displayName": "Asleep Red", "canonical": "#ef4444" }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "The name in the header. The only large type." },
+      "title": { "displayName": "Title", "purpose": "Project and company names." },
+      "body-lead": { "displayName": "Body Lead", "purpose": "Bio paragraphs and 404 copy, in muted." },
+      "body": { "displayName": "Body", "purpose": "Project descriptions and job paragraphs, in muted." },
+      "label": { "displayName": "Label", "purpose": "Pill button text." },
+      "caption": { "displayName": "Caption", "purpose": "Stack lines, dates, status pill; tabular numerals." },
+      "mono-label": { "displayName": "Mono Label", "purpose": "Section counters (\"projects / 02\") and the en/es switcher only." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "color-200", "value": "color, background-color, border-color, text-decoration-color 200ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "The only transition: hover colour changes on pills, links, icons and rows." },
+      { "name": "chevron-200", "value": "color, transform 200ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Experience chevron colour and 180deg rotation on open." },
+      { "name": "reduced-motion", "value": "transition: none !important", "purpose": "All transitions removed under prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" }
+    ],
+    "focus": { "value": "outline: 2px solid var(--accent); outline-offset: 3px", "purpose": "Global :focus-visible ring." },
+    "hitArea": { "value": ".hit::after { content: \"\"; position: absolute; inset: -5px; }", "purpose": "Grows 34px pills and icon links to a 44px target without changing their size." }
+  },
+  "components": [
+    {
+      "name": "Resume Pill",
+      "kind": "button",
+      "refersTo": "button-pill-primary",
+      "description": "The single filled control: the CV download.",
+      "html": "<a class=\"ds-pill-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 3v12\"/><path d=\"M7 10l5 5 5-5\"/><path d=\"M5 21h14\"/></svg>Resume</a>",
+      "css": ".ds-pill-primary { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 16px 0 14px; border-radius: 9999px; border: 1px solid var(--pill, #ededed); background: var(--pill, #ededed); color: var(--on-pill, #0a0a0a); font: 500 13.5px Roboto, system-ui, sans-serif; text-decoration: none; transition: color 200ms, background-color 200ms, border-color 200ms; } .ds-pill-primary:hover { background: var(--accent, #a29bfe); border-color: var(--accent, #a29bfe); color: var(--on-accent, #0a0a0a); } .ds-pill-primary:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+    },
+    {
+      "name": "Disabled Pill",
+      "kind": "button",
+      "refersTo": "button-pill-disabled",
+      "description": "Surface pill for an action not yet available.",
+      "html": "<button class=\"ds-pill-disabled\" disabled><svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"17\" rx=\"2\"/><path d=\"M16 2v4M8 2v4M3 10h18\"/></svg>Book a call <span aria-hidden=\"true\">·</span> soon</button>",
+      "css": ".ds-pill-disabled { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 14px; border-radius: 9999px; border: 1px solid var(--line, #222222); background: var(--surface, #161616); color: var(--muted, #a3a3a3); font: 500 13.5px Roboto, system-ui, sans-serif; cursor: not-allowed; }"
+    },
+    {
+      "name": "Icon Link",
+      "kind": "button",
+      "refersTo": "icon-link",
+      "description": "Bare stroke icon in a 34px round target; turns accent on hover.",
+      "html": "<a class=\"ds-icon-link\" href=\"#\" aria-label=\"GitHub\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22\"/></svg></a>",
+      "css": ".ds-icon-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9999px; color: var(--muted, #a3a3a3); transition: color 200ms; } .ds-icon-link:hover { color: var(--accent, #a29bfe); } .ds-icon-link:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+    },
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "description": "Bio link: fg text, hairline underline that turns accent on hover.",
+      "html": "<p class=\"ds-bio\">I build my own products, like <a class=\"ds-link\" href=\"#\">CheevoVault</a>.</p>",
+      "css": ".ds-bio { font: 400 15.5px/1.75 Roboto, system-ui, sans-serif; color: var(--muted, #a3a3a3); } .ds-link { color: var(--fg, #ededed); text-decoration: underline; text-decoration-color: var(--line-strong, #3a3a3a); text-underline-offset: 3px; transition: text-decoration-color 200ms; } .ds-link:hover { text-decoration-color: var(--accent, #a29bfe); } .ds-link:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+    },
+    {
+      "name": "Language Switcher",
+      "kind": "nav",
+      "description": "Mono en / es; current language in fg.",
+      "html": "<nav class=\"ds-lang\"><a href=\"#\" aria-current=\"page\">en</a><span aria-hidden=\"true\">/</span><a href=\"#\">es</a></nav>",
+      "css": ".ds-lang { display: flex; align-items: center; gap: 12px; font: 400 13px 'Roboto Mono', ui-monospace, monospace; color: var(--muted, #a3a3a3); } .ds-lang a { color: inherit; text-decoration: none; padding: 6px 0; transition: color 200ms; } .ds-lang a[aria-current] { color: var(--fg, #ededed); } .ds-lang a:hover { color: var(--fg, #ededed); } .ds-lang a:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; }"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Place and live Madrid time with an awake/asleep dot.",
+      "html": "<p class=\"ds-status\"><span class=\"ds-status-dot\" aria-hidden=\"true\"></span><span>Oviedo, Spain</span><span class=\"ds-status-sep\" aria-hidden=\"true\">·</span><span>20:57</span></p>",
+      "css": ".ds-status { display: inline-flex; align-items: center; gap: 8px; height: 30px; margin: 0; padding: 0 12px; border-radius: 9999px; border: 1px solid var(--line, #222222); background: var(--surface, #161616); color: var(--fg, #ededed); font: 400 13px Roboto, system-ui, sans-serif; font-variant-numeric: tabular-nums; } .ds-status-dot { width: 8px; height: 8px; border-radius: 9999px; background: #22c55e; } .ds-status-sep { color: var(--muted, #a3a3a3); }"
+    },
+    {
+      "name": "Project Row",
+      "kind": "card",
+      "refersTo": "project-row",
+      "description": "Whole-row link; transparent at rest, card fill and hairline on hover.",
+      "html": "<a class=\"ds-project\" href=\"#\"><span class=\"ds-project-banner\"></span><span class=\"ds-project-text\"><span class=\"ds-project-title\">CheevoVault ↗</span><span class=\"ds-project-desc\">Achievement tracking for RetroAchievements, Steam and PlayStation.</span><span class=\"ds-project-stack\">Next.js · PostgreSQL · NextAuth</span></span></a>",
+      "css": ".ds-project { display: flex; gap: 18px; padding: 12px; border-radius: 12px; border: 1px solid transparent; color: var(--fg, #ededed); text-decoration: none; font-family: Roboto, system-ui, sans-serif; transition: background-color 200ms, border-color 200ms; } .ds-project:hover { background: var(--card, #111111); border-color: var(--line, #222222); } .ds-project:focus-visible { outline: 2px solid var(--accent, #a29bfe); outline-offset: 3px; } .ds-project-banner { flex: 0 0 168px; aspect-ratio: 1200/630; border-radius: 8px; border: 1px solid var(--line, #222222); background: var(--surface, #161616); } .ds-project-text { display: flex; flex-direction: column; gap: 4px; } .ds-project-title { font-size: 15px; font-weight: 500; } .ds-project-desc { font-size: 14px; line-height: 1.6; color: var(--muted, #a3a3a3); } .ds-project-stack { font-size: 12.5px; color: var(--muted, #a3a3a3); }"
+    },
+    {
+      "name": "Section Counter",
+      "kind": "custom",
+      "description": "Mono section heading in the form label / NN.",
+      "html": "<h2 class=\"ds-counter\">projects <span aria-hidden=\"true\">/</span> 02</h2>",
+      "css": ".ds-counter { margin: 0 0 12px; font: 400 13px 'Roboto Mono', ui-monospace, monospace; color: var(--muted, #a3a3a3); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Column",
+    "overview": "One 600px column of facts on a near-black ground, read top to bottom in a single scroll. The page is a CV that happens to be a website: avatar, name, role, a short bio, two pill actions, then numbered lists of projects and jobs. Nothing is decorated. Hierarchy comes from weight (500 vs 400) and from the two-step text contrast of foreground versus muted grey, not from size jumps, colour blocks or ornament.\n\nColour is withheld until the visitor acts. The lavender accent never appears at rest except inside the project banners, which carry each product's own brand and sit outside this palette. It shows up on hover, focus, link underlines and text selection, so the page reads as monochrome until touched. The theme follows the system: dark by default, a neutral light theme under `prefers-color-scheme: light` with a deeper violet accent tuned for contrast on white.\n\nDepth is flat. Surfaces separate by a one-step tonal shift and a hairline border, never by shadow. Motion is a single 200ms colour transition, removed entirely under reduced motion.",
+    "keyCharacteristics": [
+      "One centred column, max 600px, 24px side gutter, 120px top and bottom air.",
+      "Two text tones (fg, muted) do almost all the hierarchy work.",
+      "Accent is interaction-only: hover, focus ring, underline, selection.",
+      "Fully rounded pills at 34px with a 44px invisible hit area.",
+      "Mono appears in exactly two places: section counters and the en/es switcher.",
+      "Flat: hairline borders and tonal surfaces, no shadows."
+    ],
+    "rules": [
+      { "name": "The Touch-to-Colour Rule", "body": "The accent appears only in response to the visitor: hover, focus-visible, selection, underline hover. Nothing in the portfolio's own chrome is lavender at rest.", "section": "colors" },
+      { "name": "The One Filled Pill Rule", "body": "Only the Resume download uses the filled `pill` treatment. Every other control is a surface pill, a bare icon or a text link.", "section": "colors" },
+      { "name": "The Banners Are Guests Rule", "body": "Project banners are rasters in each product's own identity. They are framed with a hairline and an 8px radius but never recoloured or tinted to match the portfolio.", "section": "colors" },
+      { "name": "The Two-Weights Rule", "body": "Hierarchy is 500 against 400 plus fg against muted. No bold, no uppercase, no letter-spaced labels.", "section": "typography" },
+      { "name": "The Mono-Is-Metadata Rule", "body": "Roboto Mono is reserved for the section counter headings and the language switcher. It never sets body copy, names or buttons.", "section": "typography" },
+      { "name": "The Hairline-Not-Shadow Rule", "body": "Separate with a 1px `line` border or a one-step surface shift. Never a box-shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every surface inside the single 600px column with the 24px gutter.",
+      "Do let accent appear only on hover, focus-visible, selection and underline hover.",
+      "Do make new controls 34px pills with the 44px hit-area outset.",
+      "Do use the `pill` fill for at most one primary action per view.",
+      "Do separate surfaces with a 1px hairline or a one-step tonal shift.",
+      "Do set section headings as mono \"label / NN\" counters in muted.",
+      "Do keep a 200ms colour-only transition and drop it under reduced motion."
+    ],
+    "donts": [
+      "Don't add box-shadows, gradients or glows.",
+      "Don't use the accent as a resting fill, text colour or background.",
+      "Don't use Roboto Mono for anything other than section counters and the language switcher.",
+      "Don't introduce bold, uppercase or tracked-out labels; hierarchy is 500/400 and fg/muted.",
+      "Don't recolour or tint project banners to the portfolio palette.",
+      "Don't add a theme toggle; the theme follows the system."
+    ]
+  }
+}

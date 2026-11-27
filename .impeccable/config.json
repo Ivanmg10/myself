@@ -1,0 +1,41 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "docs/banners/eden.html"
+        ],
+        "createdAt": "2026-11-27T18:48:27.027Z",
+        "reason": "Claude: brand colour of the client site, --bg #ece1d3 in ~/jen/src/index.css; the banner reproduces Eden's identity per the approved spec"
+      },
+      {
+        "rule": "overused-font",
+        "value": "roboto",
+        "createdAt": "2026-11-27T19:53:15.817Z",
+        "reason": "Claude: incumbent font of the site, kept in the approved design D (issue #10)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "docs/banners/eden.html"
+        ],
+        "createdAt": "2026-11-27T20:00:46.514Z",
+        "reason": "Claude: banner sources reproduce each product's own brand type (DESIGN.md rule 'Banners Are Guests'); not portfolio UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "docs/banners/cheevovault.html"
+        ],
+        "createdAt": "2026-11-27T20:00:46.600Z",
+        "reason": "Claude: banner sources reproduce each product's own brand type (DESIGN.md rule 'Banners Are Guests'); not portfolio UI"
+      }
+    ]
+  }
+}

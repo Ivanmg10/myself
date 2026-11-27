@@ -38,7 +38,6 @@
     "jest.config.js",
     "jest.setup.ts",
     "next-env.d.ts",
-    "src/app/page.test.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],

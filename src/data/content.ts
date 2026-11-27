@@ -1,0 +1,207 @@
+export const locales = ["en", "es"] as const;
+export type Locale = (typeof locales)[number];
+
+export function hasLocale(value: string): value is Locale {
+  return (locales as readonly string[]).includes(value);
+}
+
+export const SITE_URL = "https://ivanmg10.vercel.app";
+
+export const links = {
+  cv: "/cv.pdf",
+  github: "https://github.com/Ivanmg10",
+  linkedin: "https://www.linkedin.com/in/ivan-marquez-23b49b210/",
+  sngular: "https://www.sngular.com",
+  capgemini: "https://www.capgemini.com",
+  cheevovault: "https://cheevovault.com",
+  eden: "https://edenpsicologia.com",
+} as const;
+
+export type RichText = Array<string | { text: string; href: string }>;
+
+export interface Project {
+  name: string;
+  href: string;
+  banner: string;
+  description: string;
+  stack: string[];
+}
+
+export interface Job {
+  company: string;
+  logo: string;
+  role: string;
+  dates: string;
+  paragraphs: string[];
+}
+
+export interface Content {
+  meta: { title: string; description: string };
+  photoAlt: string;
+  role: string;
+  langNav: string;
+  place: string;
+  localTime: string;
+  statusAwake: string;
+  statusAsleep: string;
+  bio: RichText[];
+  resume: string;
+  call: string;
+  callSoon: string;
+  newTab: string;
+  projectsLabel: string;
+  experienceLabel: string;
+  projects: Project[];
+  jobs: Job[];
+}
+
+export const content: Record<Locale, Content> = {
+  en: {
+    meta: {
+      title: "Iván Márquez García · Senior frontend developer",
+      description:
+        "Portfolio of Iván Márquez García, senior frontend developer at Sngular. Projects: CheevoVault and Eden Psicología.",
+    },
+    photoAlt: "Photo of Iván Márquez García",
+    role: "Senior frontend developer at Sngular",
+    langNav: "Language",
+    place: "Oviedo, Spain",
+    localTime: "Local time:",
+    statusAwake: "Awake right now",
+    statusAsleep: "Outside my hours right now",
+    bio: [
+      [
+        "I am a senior frontend developer at ",
+        { text: "Sngular", href: links.sngular },
+        ", where I build an internal people-management tool for a large international retailer. Before that I spent almost five years at ",
+        { text: "Capgemini", href: links.capgemini },
+        " on CaixaBank’s MyBox insurance apps, where I mostly helped manage the team and its projects, and on some products I was the tech lead. I was the bridge between the clients, UX and QA and the developers, and helped wherever I could to meet deadlines with high-quality, well-optimized work.",
+      ],
+      [
+        "Outside work I build and maintain my own products, like ",
+        { text: "CheevoVault", href: links.cheevovault },
+        ", and websites for clients, like ",
+        { text: "Eden Psicología", href: links.eden },
+        ". I already code with generative AI every day, and every day I improve and streamline how I work with it. Even so, I am still a big fan of writing code by hand, and I keep some projects 100% handwritten out of pure love for coding. I also experiment with setting up the hardware and software of all kinds of devices.",
+      ],
+    ],
+    resume: "Resume",
+    call: "Book a call",
+    callSoon: "soon",
+    newTab: "(opens in a new tab)",
+    projectsLabel: "projects",
+    experienceLabel: "experience",
+    projects: [
+      {
+        name: "CheevoVault",
+        href: links.cheevovault,
+        banner: "/images/cheevovault-en.webp",
+        description:
+          "Achievement tracking and management for RetroAchievements, Steam and PlayStation.",
+        stack: ["Next.js", "PostgreSQL", "NextAuth", "Own component library"],
+      },
+      {
+        name: "Eden Psicología",
+        href: links.eden,
+        banner: "/images/eden.webp",
+        description: "Website for a psychology practice in Murcia.",
+        stack: ["React", "Vite", "Vercel Functions", "Resend"],
+      },
+    ],
+    jobs: [
+      {
+        company: "Sngular",
+        logo: "/sngular_logo.webp",
+        role: "Senior frontend developer",
+        dates: "2026–present",
+        paragraphs: [
+          "Internal people-management tool for a large international retailer. Each manager sees their own team’s org chart and other teams’, and handles leave, career history, salaries and sensitive data, start dates, and changes of level, position or role.",
+          "I work with AI agents every day under a very demanding delivery pace and, as the project needs it, I also take on UX, QA and code review.",
+        ],
+      },
+      {
+        company: "Capgemini",
+        logo: "/capgemini_logo.webp",
+        role: "Frontend developer",
+        dates: "2021–2026",
+        paragraphs: [
+          "Development, integration and testing (unit, end-to-end and acceptance) of the SPAs used to quote, buy and manage CaixaBank’s MyBox insurance: Vida, Vida Negocios, VidaCare and Jubilación. I helped manage the team and its projects, and was the tech lead on some products.",
+        ],
+      },
+    ],
+  },
+  es: {
+    meta: {
+      title: "Iván Márquez García · Desarrollador frontend senior",
+      description:
+        "Portfolio de Iván Márquez García, desarrollador frontend senior en Sngular. Proyectos: CheevoVault y Eden Psicología.",
+    },
+    photoAlt: "Foto de Iván Márquez García",
+    role: "Desarrollador frontend senior en Sngular",
+    langNav: "Idioma",
+    place: "Oviedo, España",
+    localTime: "Hora local:",
+    statusAwake: "Ahora mismo despierto",
+    statusAsleep: "Ahora mismo fuera de horario",
+    bio: [
+      [
+        "Soy desarrollador frontend senior en ",
+        { text: "Sngular", href: links.sngular },
+        ", donde construyo una herramienta interna de gestión de personas para un gran grupo de retail internacional. Antes pasé casi cinco años en ",
+        { text: "Capgemini", href: links.capgemini },
+        " con las aplicaciones de seguros MyBox de CaixaBank, donde sobre todo ayudé a gestionar el equipo y sus proyectos, y en algunos productos fui el tech lead. Hacía de puente entre los clientes, UX y QA y el equipo de desarrollo, y ayudaba en todo lo que podía para cumplir los plazos con un desarrollo de calidad y optimizado.",
+      ],
+      [
+        "Fuera del trabajo construyo y mantengo mis propios productos, como ",
+        { text: "CheevoVault", href: links.cheevovault },
+        ", y webs para clientes, como la de ",
+        { text: "Eden Psicología", href: links.eden },
+        ". Ya programo con IA generativa a diario y cada día mejoro y optimizo mis flujos de trabajo con ella. Aun así, sigo siendo bastante fan de programar a mano y mantengo proyectos hechos 100% a mano por puro amor a programar. También experimento con la configuración de hardware y software de todo tipo de dispositivos.",
+      ],
+    ],
+    resume: "Currículum",
+    call: "Reservar una llamada",
+    callSoon: "pronto",
+    newTab: "(se abre en una pestaña nueva)",
+    projectsLabel: "proyectos",
+    experienceLabel: "experiencia",
+    projects: [
+      {
+        name: "CheevoVault",
+        href: links.cheevovault,
+        banner: "/images/cheevovault-es.webp",
+        description:
+          "Seguimiento y gestión de logros de RetroAchievements, Steam y PlayStation.",
+        stack: ["Next.js", "PostgreSQL", "NextAuth", "Librería de componentes propia"],
+      },
+      {
+        name: "Eden Psicología",
+        href: links.eden,
+        banner: "/images/eden.webp",
+        description: "Web para una consulta de psicología en Murcia.",
+        stack: ["React", "Vite", "Vercel Functions", "Resend"],
+      },
+    ],
+    jobs: [
+      {
+        company: "Sngular",
+        logo: "/sngular_logo.webp",
+        role: "Desarrollador frontend senior",
+        dates: "2026–actualidad",
+        paragraphs: [
+          "Herramienta interna de gestión de equipos para un gran grupo de retail internacional. Cada responsable ve el organigrama de su equipo y el de otros, y gestiona bajas, trayectorias, salarios y datos sensibles, fechas de incorporación y cambios de nivel, posición o rol.",
+          "Trabajo con agentes de IA a diario en un flujo de entregas muy exigente y, por necesidad del proyecto, también me encargo de UX, QA y code review.",
+        ],
+      },
+      {
+        company: "Capgemini",
+        logo: "/capgemini_logo.webp",
+        role: "Desarrollador frontend",
+        dates: "2021–2026",
+        paragraphs: [
+          "Desarrollo, integración y pruebas (unitarias, end-to-end y de aceptación) de las SPAs de simulación, contratación y consulta de seguros MyBox de CaixaBank: Vida, Vida Negocios, VidaCare y Jubilación. Ayudé a gestionar el equipo y sus proyectos, y fui el tech lead en algunos productos.",
+        ],
+      },
+    ],
+  },
+};
