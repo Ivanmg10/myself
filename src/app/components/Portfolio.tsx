@@ -35,6 +35,7 @@ export default function Portfolio({ lang }: { lang: Locale }) {
               width={88}
               height={88}
               preload
+              quality={90}
               className="size-[88px] shrink-0 rounded-full object-cover"
             />
             <div className="order-3 min-w-0 basis-full sm:order-2 sm:flex-1 sm:basis-auto">
