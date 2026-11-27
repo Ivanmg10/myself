@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright
+/.playwright-mcp/
+/.playwright-cli/
+
+# impeccable: capturas de revisión y caché del hook (material de trabajo)
+/.impeccable/review/
+/.impeccable/hook.cache.json

@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Banner 1200x630 de CheevoVault para el portfolio. Logo, colores y tipografía tomados de ~/achivements
+     (src/utils/themeIcon.ts, src/app/globals.css, src/lib/fonts.ts). Exportar con docs/banners/README.md. -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&family=Barlow+Condensed:ital,wght@1,800&display=block" rel="stylesheet">
+<style>
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; box-sizing: border-box;
+    background: #0f1014; color: #e1e4eb;
+    display: flex; flex-direction: column; justify-content: center; padding: 0 104px;
+    font-family: "Barlow", sans-serif;
+  }
+  .mark { display: flex; align-items: center; gap: 34px; }
+  .mark svg { height: 190px; width: auto; color: #a78bfa; }
+  .mark h1 {
+    margin: 0; font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800;
+    font-size: 176px; line-height: .84; letter-spacing: -0.01em;
+  }
+  .tagline { margin: 44px 0 0; font-size: 40px; font-weight: 500; color: #e1e4eb; }
+  .sources { margin: 18px 0 0; font-size: 28px; font-weight: 600; display: flex; gap: 28px; }
+  .ra { color: #e5b53f; } .steam { color: #66c0f4; } .psn { color: #4c9bf0; }
+</style>
+</head>
+<body>
+  <div class="mark">
+    <svg viewBox="440 80 1060 1200" aria-hidden="true">
+      <path fill="currentColor" d="M963 90 L1482 384 L1376 452 L963 227 L581 456 L581 897 L970 1123 L1374 893 L1490 960 L975 1265 L456 965 L452 385 Z"/>
+      <path fill="currentColor" d="M963 322 L1172 447 L970 930 L760 452 Z"/>
+      <path fill="currentColor" fill-opacity=".65" d="M655 495 L880 965 L662 858 Z"/>
+      <path fill="currentColor" fill-opacity=".4" d="M1265 495 L1282 855 L1055 975 Z"/>
+    </svg>
+    <h1>CheevoVault</h1>
+  </div>
+  <p class="tagline">Todos tus logros, en un mismo sitio</p>
+  <p class="sources"><span class="ra">RetroAchievements</span><span class="steam">Steam</span><span class="psn">PlayStation</span></p>
+  <script>
+    // ?lang=en: the English tagline, as on cheevovault.com (src/translations/en.ts).
+    if (new URLSearchParams(location.search).get('lang') === 'en') {
+      document.documentElement.lang = 'en';
+      document.querySelector('.tagline').textContent = 'Every achievement you have earned, in one place';
+    }
+  </script>
+</body>
+</html>

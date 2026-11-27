@@ -13,11 +13,14 @@ const customJestConfig = {
   },
   collectCoverage: true, // activa coverage
   collectCoverageFrom: [
-    'src/app/**/*.{ts,tsx}',  // <--- ahora apunta dentro de src
-    '!src/app/**/*.d.ts',
-    '!src/app/**/index.tsx',
-    '!node_modules/**',
+    'src/app/**/*.{ts,tsx}',
+    'src/data/**/*.ts',
+    'src/proxy.ts',
+    '!src/**/*.d.ts',
   ],
+  coverageThreshold: {
+    global: { branches: 100, functions: 100, lines: 100, statements: 100 },
+  },
   coverageDirectory: '<rootDir>/coverage', // directorio de reporte
   coverageReporters: ['text', 'lcov'],     // consola + HTML
 }
